@@ -24,6 +24,10 @@
 		93CF1D7E19A17A42003FBB14 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93CF1D7D19A17A42003FBB14 /* Images.xcassets */; };
 		93CF1D9D19A23F01003FBB14 /* CampSiteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CF1D9C19A23F01003FBB14 /* CampSiteService.swift */; };
 		93DC421B19A6D4E900D015A8 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC421A19A6D4E900D015A8 /* CoreDataStack.swift */; };
+		D949E1B821B1B63600CFB26B /* CampSiteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D949E1B721B1B63600CFB26B /* CampSiteServiceTests.swift */; };
+		D949E1BA21B1B76000CFB26B /* ReservationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D949E1B921B1B76000CFB26B /* ReservationServiceTests.swift */; };
+		D9F329EC21B1A44F00D2FB9F /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F329EB21B1A44F00D2FB9F /* TestCoreDataStack.swift */; };
+		D9F329EE21B1A5AA00D2FB9F /* CamperServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F329ED21B1A5AA00D2FB9F /* CamperServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,10 @@
 		93CF1D9419A17F25003FBB14 /* CampgroundManager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CampgroundManager-Bridging-Header.h"; sourceTree = "<group>"; };
 		93CF1D9C19A23F01003FBB14 /* CampSiteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampSiteService.swift; sourceTree = "<group>"; };
 		93DC421A19A6D4E900D015A8 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		D949E1B721B1B63600CFB26B /* CampSiteServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampSiteServiceTests.swift; sourceTree = "<group>"; };
+		D949E1B921B1B76000CFB26B /* ReservationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationServiceTests.swift; sourceTree = "<group>"; };
+		D9F329EB21B1A44F00D2FB9F /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
+		D9F329ED21B1A5AA00D2FB9F /* CamperServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamperServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +90,10 @@
 		938C96F019AAE9520009D5EB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D9F329EB21B1A44F00D2FB9F /* TestCoreDataStack.swift */,
+				D9F329ED21B1A5AA00D2FB9F /* CamperServiceTests.swift */,
+				D949E1B721B1B63600CFB26B /* CampSiteServiceTests.swift */,
+				D949E1B921B1B76000CFB26B /* ReservationServiceTests.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -229,7 +241,8 @@
 					};
 					93CF1D8219A17A42003FBB14 = {
 						CreatedOnToolsVersion = 6.0;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1010;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 93CF1D6B19A17A42003FBB14;
 					};
 				};
@@ -299,6 +312,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D949E1B821B1B63600CFB26B /* CampSiteServiceTests.swift in Sources */,
+				D9F329EC21B1A44F00D2FB9F /* TestCoreDataStack.swift in Sources */,
+				D949E1BA21B1B76000CFB26B /* ReservationServiceTests.swift in Sources */,
+				D9F329EE21B1A5AA00D2FB9F /* CamperServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +438,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "CampgroundManager/CampgroundManager-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -441,6 +459,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "CampgroundManager/CampgroundManager-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -449,6 +468,9 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -457,6 +479,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.razeware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CampgroundManager.app/CampgroundManager";
@@ -468,10 +491,14 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CampgroundManagerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.razeware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CampgroundManager.app/CampgroundManager";

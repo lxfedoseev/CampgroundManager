@@ -29,6 +29,7 @@ public final class CamperService {
   let managedObjectContext: NSManagedObjectContext
   let coreDataStack: CoreDataStack
 
+  
   // MARK: Initializers
   public init(managedObjectContext: NSManagedObjectContext, coreDataStack: CoreDataStack) {
     self.managedObjectContext = managedObjectContext

@@ -51,24 +51,47 @@ extension CampSiteService {
   }
   
   public func deleteCampSite(_ siteNumber: NSNumber) {
-    // TODO : Not yet implemented
+    guard let campSite = getCampSite(siteNumber) else { return }
+    
+    managedObjectContext.delete(campSite)
+    coreDataStack.saveContext(managedObjectContext)
   }
   
   public func getCampSite(_ siteNumber: NSNumber) -> CampSite? {
-    // TODO : Not yet implemented
-    
-    return nil
+    let fetchRequest: NSFetchRequest<CampSite> =
+      CampSite.fetchRequest()
+    fetchRequest.predicate = NSPredicate(format: "siteNumber == %@", argumentArray: [siteNumber])
+    let results: [CampSite]?
+    do {
+      results = try managedObjectContext.fetch(fetchRequest)
+    } catch {
+      return nil
+    }
+    return results?.first
   }
   
   public func getCampSites() -> [CampSite] {
-    // TODO : Not yet implemented
+    let fetchRequest: NSFetchRequest<CampSite> = CampSite.fetchRequest()
+    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "siteNumber", ascending: true)]
     
-    return []
+    var results: [CampSite]
+    do {
+      try results = managedObjectContext.fetch(fetchRequest)
+    } catch {
+      results = []
+    }
+    
+    return results
   }
   
   public func getNextCampSiteNumber() -> NSNumber {
-    // TODO : Not yet implemented
+    let sites = getCampSites()
     
-    return -1
+    if sites.count > 0 {
+      let lastSiteNumber = sites.last!.siteNumber!
+      return NSNumber(value: lastSiteNumber.intValue + 1)
+    }
+    
+    return 1
   }
 }
